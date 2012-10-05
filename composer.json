@@ -1,6 +1,7 @@
 {
     "name": "nocarrier/github",
     "type": "library",
+    "version": "dev",
     "description": "GitHub API v3 for PHP",
     "keywords": ["github"],
     "homepage": "https://github.com/blongden/github",
