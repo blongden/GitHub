@@ -1,0 +1,24 @@
+{
+    "name": "nocarrier/github",
+    "type": "library",
+    "description": "GitHub API v3 for PHP",
+    "keywords": ["github"],
+    "homepage": "https://github.com/blongden/github",
+    "license": "MIT",
+    "authors": [
+        {
+            "name": "Ben Longden",
+            "email": "ben@nocarrier.co.uk",
+            "homepage": "http://nocarrier.co.uk"
+        }
+    ],
+    "require": {
+        "php": ">=5.3.0",
+        "guzzle/guzzle": "*"
+    },
+    "autoload": {
+        "psr-0": {
+            "Nocarrier": "src"
+        }
+    }
+}
