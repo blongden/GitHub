@@ -13,9 +13,10 @@ class User
     }
 
     // todo: handle login failure and credentials expiry
-    public function login($user, $password)
+    public function login($user = null, $password = null)
     {
-        if (!file_exists('.github')) {
+        if (!file_exists('.github') && !is_null($user) && !is_null($password)) {
+var_dump($user);
             $request = $this->http->post(
                 '/authorizations',
                 null,
@@ -31,6 +32,7 @@ class User
             $auth = json_decode($response->getBody());
             file_put_contents('.github', $response->getBody());
         } else {
+            var_dump($auth);
             $auth = json_decode(file_get_contents('.github'));
         }
 
