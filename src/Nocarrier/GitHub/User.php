@@ -16,7 +16,6 @@ class User
     public function login($user = null, $password = null)
     {
         if (!file_exists('.github') && !is_null($user) && !is_null($password)) {
-var_dump($user);
             $request = $this->http->post(
                 '/authorizations',
                 null,
