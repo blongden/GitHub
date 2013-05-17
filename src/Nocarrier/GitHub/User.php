@@ -31,7 +31,6 @@ class User
             $auth = json_decode($response->getBody());
             file_put_contents('.github', $response->getBody());
         } else {
-            var_dump($auth);
             $auth = json_decode(file_get_contents('.github'));
         }
 
