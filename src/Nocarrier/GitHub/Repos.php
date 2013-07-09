@@ -28,6 +28,8 @@ class Repos
             $links = $response->getHeader('Link');
             if ($links && $link = $links->getLink('next')) {
                 $url = isset($link['url']) ? $link['url'] : null;
+            } else {
+                $url = null;
             }
         } while (!is_null($url));
         return $data;
