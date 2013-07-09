@@ -25,13 +25,11 @@ class Repos
             }
 
             $data = array_merge_recursive($data, json_decode($response->getBody()));
-            $link = $response->getHeader('Link')->getLink('next');
-            if (isset($link['url'])) {
-                $url = $link['url'];
-            } else {
-                $url = null;
+            $links = $response->getHeader('Link');
+            if ($links && $link = $links->getLink('next')) {
+                $url = isset($link['url']) ? $link['url'] : null;
             }
-        } while(!is_null($url));
+        } while (!is_null($url));
         return $data;
     }
 }
